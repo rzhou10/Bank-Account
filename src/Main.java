@@ -3,8 +3,8 @@ import java.util.Scanner;
 class Main{
     public static void main(String[] args){
 		
-        Checking check = new Checking();
-        Savings save = new Savings();
+        Checking check = new Checking("1234");
+        Savings save = new Savings("1234");
         Scanner scan = new Scanner(System.in);
 
         boolean active = true;
@@ -13,7 +13,7 @@ class Main{
             System.out.println("Please enter your PIN.");
             String num = scan.nextLine();
             
-            if (num.length() != 4){
+            if (!num.equals(check.getPin())){
                 System.out.println("PIN entered incorrectly, please try again.");
             }
             else{

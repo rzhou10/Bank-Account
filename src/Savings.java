@@ -1,6 +1,15 @@
 class Savings extends Account{
-    private static int balance = 0;
-    private static int withdrawLimit = 0;
+    private int balance = 0;
+    private int withdrawLimit = 0;
+    private String pin = "";
+
+    Savings(String pin){
+        this.pin = pin;
+    }
+
+    public String getPin(){
+        return pin;
+    }
 
     public void deposit(String amount){
         balance += Integer.parseInt(amount);
